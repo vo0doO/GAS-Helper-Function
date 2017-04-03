@@ -2,10 +2,10 @@
 //--//Dependent on isEmpty_()
 // Script Look-up
 /*
-Benefit of this script is:
--That google sheets will not continually do lookups on data that is not changing with using this function as it is set with hard values until script is kicked off again.
--Unlike Vlookup you can have it look at for reference data at any Column in the row.  Does not have to be in the first column for it to work like Vlookup.
--You can return the Lookup to Memory for further processing by other functions
+Преимущество этого скрипта: 
+-Такие листы google не будут постоянно выполнять поиск данных, которые не изменяются при использовании этой функции, поскольку она задана с жесткими значениями, пока сценарий не будет запущен снова. 
+-В отличие от Vlookup вы можете просмотреть его для справочных данных в любом столбце в строке. Не должно быть в первом столбце, чтобы он работал как Vlookup. 
+-Вы можете вернуть Lookup to Memory для дальнейшей обработки с помощью других функций
 
 Search terms:
  - Google App Script / GAS / Javascript 
@@ -26,27 +26,27 @@ Lookup_("female","Sheet1!A:G",4,[2],"Database!A1","y","y","y");
 //or
 Lookup_(Sheetinfo,LocationsArr,4,[0],"return","y","y","y");
 
--Loads all Locations numbers from J2:J into a variable 
---looks for Location Numbers in Column 0 of Referance sheet and range eg "Data!A:G"
----Returns results to Column 3 of Target Sheet and range eg "test!A1" or "1,1"
+-Загрузить все номера мест из J2: J в переменную 30 
+- ищет номера мест в столбце 0 справочного листа и диапазон, например: «Данные! A: G» 31 
+--- возвращает результаты в столбец 3 целевого листа и диапазон, например, «test! A1» или «1,1»,
 
 
 Parameters Explaination:
-"Search_Key" - Can be be a single cell or an array to lookup multiple things at once
+"Search_Key" - Может быть одной ячейкой или массивом для одновременного поиска нескольких объектов
 
-"RefSheetRange" - The Reference source of information.  Can be local sheet reference and range or an array of data from a variable.
+"RefSheetRange" - Справочный источник информации. Может быть локальной ссылкой на лист и диапазоном или массивом данных из переменной.
 
-"SearchKey_RefMatch_IndexOffSet" - What column of information you are referencing of 'Search_Key' to 'RefSheetRange' data.
+"SearchKey_RefMatch_IndexOffSet" - В каком столбце информации вы ссылаетесь на данные «Search_Key» на «RefSheetRange»
 
-"IndexOffSetForReturn" - Once a 'Search_Key' match has been found what columns of data will be returned from 'RefSheetRange'.
+"IndexOffSetForReturn" - После того, как найдено совпадение 'Search_Key', какие столбцы данных будут возвращены из 'RefSheetRange'
 
-"SetSheetRange" - Where are you going to put the chosen information from 'RefSheetRange' that matched 'Search_Key' OR you can use 'return' and when the function finishes it will return so you can output the function to a variable.
+"SetSheetRange" - Куда вы собираетесь поместить выбранную информацию из 'RefSheetRange', совпадающую с 'Search_Key' ИЛИ ​​вы можете использовать 'return', и когда функция завершится, она вернется, чтобы вы могли вывести функцию в переменную
 
-"ReturnMultiResults" - If 'Y' Say you 'Search_Key' is 'NW' and you want to find every store in a chain that falls under the northwest in your dataset. So declaring 'Y' wont stop after it finds the first match it will keep searching throught the rest of the data.
+"ReturnMultiResults" - Если 'Y' Говорят, что 'Search_Key' является 'NW', и вы хотите найти каждое хранилище в цепочке, которая попадает под северо-запад в ваш набор данных. Таким образом, объявление о том, что 'Y' не остановится после того, как оно найдет первое совпадение, продолжит поиск остальных данных
 
-"Add_Note" - If 'Y' you are setting the results to a spreadsheet and not returning it to memory then it will set the first cell in the 'SetSheetRange' with a note of what and when.
+"Add_Note" - Если «Y» вы устанавливаете результаты в электронную таблицу и не возвращаете ее в память, тогда она будет устанавливать первую ячейку в «SetSheetRange» с примечанием о том, что и когда.
 
-"Has_NAs" - If  'Y' it will put in '#N/A' the column where it did not find data for 'Search_Key' other wise it will leave the column blank.
+"Has_NAs" - Если 'Y', он помещает '# N / A' в столбец, где он не нашел данные для 'Search_Key', иначе он оставит столбец пустым.
 
 */
 
