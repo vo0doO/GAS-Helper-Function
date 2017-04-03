@@ -1,12 +1,13 @@
 //~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`
 /*
-Benefit of this script is:
-- Allows you to send the function to arrays of columns and compile them or add them side by side
-- You can send as many parameters as you need
-
-Search terms:
- - Add two columns together / add one column to another one / concatenate two columns / join two columns / add one array to another array / concatenate arrays / join array / add array to side of another array / transpose array
- - Google App Script / GAS / javascript 
+Преимущество этого скрипта: 
+ - Позволяет отправить функцию в массивы столбцов и скомпилировать их или добавить их рядом 
+ - Вы можете отправить столько параметров, сколько вам нужно 
+ 
+Условия поиска: 
+ - Добавить два столбца вместе / добавить один столбец к другому / объединить два столбца 
+/ соединить два столбца / добавить один массив в другой массив / объединить массивы / объединить массив 
+/ добавить массив в сторону другого массива / массива транспонирования 9  - Google App Script / GAS / javascript
 
 +-------+-------+-----------+------+
 | name  |  job  |   role    | num  |
@@ -31,16 +32,16 @@ Usage:
 
 function ColumnTransposer_() 
   {
-  var copyArray = [];  //Create empty array
-  for (var i=0, iL=arguments[0].length; i<iL; i++)  //loops for the first argument length
+  var copyArray = [];  //СОздать пустой массив
+  for (var i=0, iL=arguments[0].length; i<iL; i++)  //Циклы для первой длины аргумента
   {
-    var copyArrayRow = []; // Create empty array every time the loop hits this point
-    for (var a in arguments)  // loops through each argument that was sent to the function
+    var copyArrayRow = []; // Создавать пустой массив каждый раз, когда цикл достигает этой точки
+    for (var a in arguments)  // Перебирает каждый аргумент, отправленный в функцию
     {
-      copyArrayRow.push(arguments[a][i].toString());  //get the current argument and its index from the outer loop's level
+      copyArrayRow.push(arguments[a][i].toString());  //Получить текущий аргумент и его индекс с уровня внешнего цикла
     }
-    copyArray.push(copyArrayRow); // After all the argument's current index have been added to copyArrayRow variable it is pushed as a new row
+    copyArray.push(copyArrayRow); // После того, как весь текущий индекс аргумента был добавлен в переменную copyArrayRow, он помещается как новая строка
   }
-  return copyArray;  //returns the new 2d array.
+  return copyArray;  //Возвращает новый массив 2d.
 }
 //~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`~,~`
